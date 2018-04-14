@@ -51,11 +51,8 @@ public class RationalNumber{
   	if(y.numerator==0){
   		throw new IllegalArgumentException("Divide by zero!");
   	}
-  	RationalNumber product = new RationalNumber();
-  	product.numerator = this.numerator * y.denominator;
-  	product.denominator = this.denominator * y.numerator;
-  	product.reduce();
-  	return product;
+  	RationalNumber yrepicrocal = new RationalNumber(y.denominator,y.numerator);
+  	return this.multiply(yrepicrocal);
   }
 
   public RationalNumber add(RationalNumber y){
