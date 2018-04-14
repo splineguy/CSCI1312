@@ -47,6 +47,17 @@ public class RationalNumber{
   	return product;
   }
   
+  public RationalNumber divide(RationalNumber y){
+  	if(y.numerator==0){
+  		throw new IllegalArgumentException("Divide by zero!");
+  	}
+  	RationalNumber product = new RationalNumber();
+  	product.numerator = this.numerator * y.denominator;
+  	product.denominator = this.denominator * y.numerator;
+  	product.reduce();
+  	return product;
+  }
+
   private void reduce(){
     int gcd = slowGCD(this.numerator,this.denominator);
     this.numerator /= gcd;
