@@ -20,9 +20,10 @@ public class RNapp{
   */
     
     RationalNumber x = new RationalNumber(-780,-9720);
-    RationalNumber y = new RationalNumber();
+    RationalNumber y = new RationalNumber(14,78);
     System.out.println("x = " + x);
     System.out.println("y = " + y);
+    System.out.println("x*y = " + x.multiply(y));
   }
 
 }

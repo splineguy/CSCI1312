@@ -33,12 +33,19 @@ public class RationalNumber{
   public String toString(){
     if(this.denominator ==1){
       return ""+this.numerator;
+    } else if(this.numerator==0){
+    	return "0";
     }
     return this.numerator + "/" + this.denominator;
   }
   
   public RationalNumber multiply(RationalNumber y){
-    
+  	RationalNumber product = new RationalNumber();
+  	product.numerator = this.numerator * y.numerator;
+  	product.denominator = this.denominator * y.denominator;
+  	product.reduce();
+  	return product;
+  }
   
   private void reduce(){
     int gcd = slowGCD(this.numerator,this.denominator);
@@ -49,6 +56,9 @@ public class RationalNumber{
   private static int slowGCD(int a, int b){
     // determines the gcd of a and b by checking
     // all ints from 2 to (min(|a|,|b|))/2 
+    if(a==0 || b==0){
+    	return 1;
+    }
     if (a==b || (a<b && b%a==0)){
       return a;
     } else if (a%b==0){
