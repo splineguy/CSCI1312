@@ -63,6 +63,11 @@ public class RationalNumber{
   	return sum;
   }
 
+  public RationalNumber subtract(RationalNumber y){
+  	RationalNumber negativey = new RationalNumber(-y.numerator,y.denominator);
+  	return this.add(negativey);
+  }
+
   private void reduce(){
     int gcd = slowGCD(this.numerator,this.denominator);
     this.numerator /= gcd;

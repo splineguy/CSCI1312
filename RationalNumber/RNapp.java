@@ -26,6 +26,7 @@ public class RNapp{
     System.out.println("x*y = " + x.multiply(y));
     System.out.println("x/y = " + x.divide(y));
     System.out.println("x+y = " + x.add(y));
+    System.out.println("x-y = " + x.subtract(y));
 
   }
 
