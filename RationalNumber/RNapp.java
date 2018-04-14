@@ -2,23 +2,6 @@ import java.util.*;
 
 public class RNapp{
   public static void main(String[] args){
-  /*  Scanner in = new Scanner(System.in);
-    String repeat = "y";
-    
-    while(repeat.equals("y")){
-      System.out.println("Enter two integers separated by a space: ");
-      
-      int a = in.nextInt();
-      int b = in.nextInt();
-      
-      System.out.println("gcd("+a+", "+b+") = "+slowGCD(a,b));
-      System.out.println("Go again? (y/n): ");
-      
-      repeat = in.next();
-    }
-  }
-  */
-
     Scanner in = new Scanner(System.in);
     String repeat = "y";
     while(repeat.equals("y")){
