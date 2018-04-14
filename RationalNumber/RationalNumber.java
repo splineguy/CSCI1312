@@ -8,10 +8,7 @@ public class RationalNumber{
     if(denominator==0){
       throw new IllegalArgumentException("zero denominator not allowed");
     }
-    if ((numerator <0 && denominator <0)||(numerator >0 && denominator <0)){
-      numerator = -1*numerator;
-      denominator = -1*denominator;
-    }
+    
     this.numerator = numerator;
     this.denominator = denominator;
     this.reduce();
@@ -71,7 +68,12 @@ public class RationalNumber{
   private void reduce(){
     int gcd = slowGCD(this.numerator,this.denominator);
     this.numerator /= gcd;
-    this.denominator /= gcd;    
+    this.denominator /= gcd;  
+
+    if ((numerator <0 && denominator <0)||(numerator >0 && denominator <0)){
+      numerator = -1*numerator;
+      denominator = -1*denominator;
+    }  
   }
   
   private static int slowGCD(int a, int b){
