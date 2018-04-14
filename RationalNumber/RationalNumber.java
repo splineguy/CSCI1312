@@ -58,6 +58,14 @@ public class RationalNumber{
   	return product;
   }
 
+  public RationalNumber add(RationalNumber y){
+  	RationalNumber sum = new RationalNumber();
+  	sum.numerator = this.numerator*y.denominator + y.numerator * this.denominator;
+  	sum.denominator = this.denominator*y.denominator;
+  	sum.reduce();
+  	return sum;
+  }
+
   private void reduce(){
     int gcd = slowGCD(this.numerator,this.denominator);
     this.numerator /= gcd;
